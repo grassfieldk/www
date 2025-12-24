@@ -1,11 +1,36 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import LinkList from '../components/LinkList';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const products = [
+  {
+    id: '1',
+    title: 'Web Utils',
+    description: '思いついたウェブツールを追加していくサイト',
+    url: 'https://utils.grassfield.online/',
+  },
+  {
+    id: '2',
+    title: 'Web Games',
+    description: '思いついたブラウザゲームを追加していくサイト',
+    url: 'https://games.grassfield.online/',
+  },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <header class="container" style="margin-bottom: var(--space-lg);">
+    <div class="profile-image"></div>
+    <h1>GrassfieldK's Home</h1>
+  </header>
+
+  <main class="container" style="margin-bottom: var(--space-lg);">
+    <div>
+      <LinkList products={products} client:load />
+    </div>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2025 GrassfieldK.</p>
+  </footer>
 </Layout>
