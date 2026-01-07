@@ -33,6 +33,7 @@ export default function LinkList({ products }: LinkListProps) {
                   fontSize: "0.9rem",
                   color: "var(--color-text-muted)",
                   marginTop: "4px",
+                  textAlign: "left",
                 }}
               >
                 {product.description}
